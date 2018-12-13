@@ -1,0 +1,21 @@
+{
+  "test_list": [
+    {
+      "test_package_name": "",
+      "test_packages": [],
+      "test_classes": [],
+      "test_cases": []
+    }
+  ],
+  "test_set_list": [
+    {
+      "set_name": "default",
+      "apk_name_part": "",
+      "application_apk_assemble_task": "",
+      "test_apk_assemble_task": "",
+      "gradle_build_params": "",
+      "shard": false,
+      "set_package_names": []
+    }
+  ]
+}
