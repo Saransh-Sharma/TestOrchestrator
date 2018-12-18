@@ -1,4 +1,6 @@
 
     Sample results:
       
-      [[https://github.com/Saransh-Sharma/TestOrchestrator/blob/master/ResultsScreenshot.png|alt=octocat]]
+
+
+![Test Results Sample](https://raw.githubusercontent.com/Saransh-Sharma/TestOrchestrator/master/ResultsScreenshot.png)
