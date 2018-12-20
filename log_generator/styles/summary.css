@@ -1,0 +1,641 @@
+.summary-wrapper {
+    width: 76%;
+    min-width: 800px;
+
+    margin: auto;
+    padding: 10px;
+}
+
+.summary-header {
+    width: 100%;
+
+    background-color: #0e2b59;
+    color: #ffffff;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    text-align: center;
+
+    padding: 8px 0;
+}
+
+.summary-table {
+    width: 100%;
+
+    display: table;
+
+    background-color: #f7faff;
+
+    padding: 3px 0 0 0;
+}
+
+.summary-subtable {
+    width: 100%;
+
+    display: table;
+}
+
+.summary-table-row {
+    width: 50%;
+
+    display: table-row;
+}
+
+.summary-table-cell-separator {
+    width: 100%;
+    height: 3px;
+
+    display: table-caption;
+
+    background-color: #f7faff;
+}
+
+.summary-table-cell-subseparator {
+    width: 100%;
+    height: 1px;
+
+    display: table-caption;
+
+    background-color: #f7faff;
+}
+
+.summary-table-results-header {
+    width: 100%;
+
+    display: table-caption;
+
+    background-color: #cbef7a;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+
+    padding: 6px 0;
+}
+
+.summary-table-results-cell {
+    width: 100%;
+    height: 100px;
+
+    display: table-caption;
+
+    background-color: #ebffd3;
+    color: #182301;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 400%;
+    text-align: center;
+    vertical-align: middle;
+
+    line-height: 100px;
+}
+
+.summary-table-results-passed-cell-left {
+    width: 60%;
+
+    display: table-cell;
+
+    background-color: #dfffaa;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: left;
+
+    padding: 6px 6px 6px 18px;
+}
+
+.summary-table-results-passed-cell-right {
+    width: 40%;
+
+    display: table-cell;
+
+    background-color: #d6ff96;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px 6px 6px 18px;
+}
+
+.summary-table-results-failed-cell-left {
+    width: 60%;
+
+    display: table-cell;
+
+    background-color: #ffafaf;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: left;
+
+    padding: 6px 6px 6px 18px;
+}
+
+.summary-table-results-failed-cell-right {
+    width: 40%;
+
+    display: table-cell;
+
+    background-color: #ff9696;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px 6px 6px 18px;
+}
+
+.summary-table-general-header {
+    width: 100%;
+
+    display: table-caption;
+
+    background-color: #7aa7ef;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+
+    padding: 6px 0;
+}
+
+.summary-table-general-cell-left {
+    width: 60%;
+
+    display: table-cell;
+
+    background-color: #d1e2ff;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: left;
+
+    padding: 6px 6px 6px 18px;
+}
+
+.summary-table-general-cell-right {
+    width: 40%;
+
+    display: table-cell;
+
+    background-color: #c9daff;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px 6px 6px 18px;
+}
+
+.summary-table-apk-header {
+    width: 100%;
+
+    display: table-caption;
+
+    background-color: #bc7aef;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+
+    padding: 6px 0;
+}
+
+.summary-table-apk-subheader {
+    width: 100%;
+
+    display: table-caption;
+
+    background-color: #d8a5ff;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+
+    padding: 6px 0;
+}
+
+.summary-table-apk-cell-left {
+    width: 60%;
+
+    display: table-cell;
+
+    background-color: #e8ccff;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: left;
+
+    padding: 3px 3px 3px 15px;
+}
+
+.summary-table-apk-cell-right {
+    width: 40%;
+
+    display: table-cell;
+
+    background-color: #e5c6ff;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 3px 3px 3px 15px;
+}
+
+.summary-table-devices-header {
+    width: 100%;
+
+    display: table-caption;
+
+    background-color: #efe37a;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+
+    padding: 6px 0;
+}
+
+.summary-table-devices-subheader {
+    width: 100%;
+
+    display: table-caption;
+
+    background-color: #fff493;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+
+    padding: 6px 0;
+}
+
+.summary-table-devices-cell-left {
+    width: 60%;
+
+    display: table-cell;
+
+    background-color: #fff9c4;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: left;
+
+    padding: 3px 3px 3px 15px;
+}
+
+.summary-table-devices-cell-right {
+    width: 40%;
+
+    display: table-cell;
+
+    background-color: #fff5af;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 3px 3px 3px 15px;
+}
+
+.test-package-wrapper {
+}
+
+.package-header {
+    width: 100%;
+
+    background-color: #0e2b59;
+    color: #ffffff;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 8px 0;
+}
+
+.passed-test-table {
+    width: 100%;
+
+    display: table;
+
+    background-color: #ebffd3;
+
+    padding: 5px 0;
+}
+
+.passed-test-header {
+    width: 100%;
+
+    display: table-caption;
+
+    background-color: #b2e278;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px 0;
+}
+
+.passed-test-row {
+    width: 100%
+;
+    display: table-row;
+}
+
+.passed-test-cell {
+    width: 25%;
+
+    display: table-cell;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px;
+}
+
+.failed-table-wrapper {
+    width: 100%;
+
+    background-color: #ffd3d3;
+}
+
+
+.failed-test-table {
+    width: 100%;
+
+    display: table;
+
+    background-color: #ffd3d3;
+
+    padding: 5px 0;
+}
+
+.failed-test-header {
+    width: 100%;
+
+    display: table-caption;
+
+    background-color: #e27777;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px 0;
+}
+
+.failed-test-row {
+    width: 100%;
+
+    display: table-row;
+}
+
+.failed-test-cell {
+    width: 25%;
+
+    display: table-cell;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px;
+}
+
+.test-case-separator {
+    width: 100%;
+    height: 3px;
+
+    display: table-caption;
+
+    background-color: #f7faff;
+}
+
+.failed-test-error-table {
+    width: 98%;
+
+    display: table;
+
+    margin: auto;
+    padding: 6px;
+}
+
+.failed-test-error-dark {
+    width: 100%;
+
+    display: table-cell;
+
+    background-color: #f2b5b5;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    text-align: left;
+
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE */
+    word-break: break-all;
+
+    padding: 3px;
+}
+
+.failed-test-error-light {
+    width: 100%;
+
+    display: table-cell;
+
+    background-color: #f2bfbf;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    text-align: left;
+
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE */
+    word-break: break-all;
+
+    padding: 3px;
+}
+
+.summary-failed-test-list-table {
+    width: 100%;
+
+    background-color: #ffd3d3;
+}
+
+.summary-failed-test-list-subtable {
+    width: 100%;
+
+    display: table;
+
+    background-color: #ffd3d3;
+
+    padding: 0 0 0 0;
+}
+
+.summary-failed-test-row {
+    width: 100%;
+
+    display: table-row;
+}
+
+.failed-test-list-light {
+    width: 100%;
+
+    display: table-cell;
+
+    background-color: #f2bfbf;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    text-align: left;
+
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE */
+    word-break: break-all;
+
+    padding: 3px 0px 3px 18px;
+}
+
+.failed-test-list-dark {
+    width: 100%;
+
+    display: table-cell;
+
+    background-color: #f2b5b5;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    text-align: left;
+
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE */
+    word-break: break-all;
+
+    padding: 3px 0px 3px 18px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.rerun-table-wrapper {
+    width: 100%;
+
+    background-color: #eafeff;
+}
+
+.rerun-test-table {
+    width: 100%;
+
+    display: table;
+
+    background-color: #d3fff9;
+
+    padding: 5px 0;
+}
+
+.rerun-test-header {
+    width: 100%;
+
+    display: table-caption;
+
+    background-color: #77dce2;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px 0;
+}
+
+.rerun-test-row {
+    width: 100%;
+
+    display: table-row;
+}
+
+.rerun-test-cell {
+    width: 25%;
+
+    display: table-cell;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px;
+}
+
+.rerun-test-error-table {
+    width: 98%;
+
+    display: table;
+
+    margin: auto;
+    padding: 6px;
+}
+
+.rerun-test-error-dark {
+    width: 100%;
+
+    display: table-cell;
+
+    background-color: #baecef;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    text-align: left;
+
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE */
+    word-break: break-all;
+
+    padding: 3px;
+}
+
+.rerun-test-error-light {
+    width: 100%;
+
+    display: table-cell;
+
+    background-color: ##d4f5f7;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    text-align: left;
+
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE */
+    word-break: break-all;
+
+    padding: 3px;
+}
+
