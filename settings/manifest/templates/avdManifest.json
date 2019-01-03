@@ -1,0 +1,34 @@
+{
+  "avd_schema_list": [
+    {
+      "avd_name": "",
+      "create_avd_package": "",
+      "create_device": "",
+      "create_avd_tag": "",
+      "create_avd_abi": "",
+      "create_avd_additional_options": "",
+      "create_avd_hardware_config_filepath": "",
+      "launch_avd_snapshot_filepath": "",
+      "launch_avd_launch_binary_name": "",
+      "launch_avd_additional_options": ""
+    }
+  ],
+  "avd_set_list": [
+    {
+      "set_name": "default",
+      "avd_list": [
+        {
+          "avd_name": "",
+          "instances": -1
+        }
+      ],
+      "avd_port_rules": {
+        "assign_missing_ports": true,
+        "search_range_min": 5556,
+        "search_range_max": 5580,
+        "ports_to_ignore": [],
+        "ports_to_use": []
+      }
+    }
+  ]
+}
