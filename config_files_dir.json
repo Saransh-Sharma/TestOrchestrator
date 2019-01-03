@@ -1,0 +1,6 @@
+{
+  "path_manifest_path": "/Users/saransh1337/codeMonkey/Projects/AutomationTestSupervisor/newConfigFiles/pathManifest.json",
+  "launch_manifest_path": "/Users/saransh1337/codeMonkey/Projects/AutomationTestSupervisor/newConfigFiles/launchManifest.json",
+  "test_manifest_path": "/Users/saransh1337/codeMonkey/Projects/AutomationTestSupervisor/newConfigFiles/testManifest.json",
+  "avd_manifest_path": "/Users/saransh1337/codeMonkey/Projects/AutomationTestSupervisor/newConfigFiles/avdManifest.json"
+}
