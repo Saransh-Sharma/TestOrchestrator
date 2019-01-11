@@ -2,7 +2,7 @@
 
 Read this here:
 
-    **https://saransh-sharma.github.io/TestOrchestrator/**
+    https://saransh-sharma.github.io/TestOrchestrator/
     
 ## Intro to auto testing of Consumer Android App
 Automated Functional Tests for Consumer Android app are of 2 kinds:
@@ -42,7 +42,7 @@ If you have already set this up please move onto the section that deals with the
 watch this space
 #### On local machine
 
-######1. Clone the following 2 repositories:
+###### 1. Clone the following 2 repositories:
 
 Test Orchestrator: This is the test runner
 
@@ -52,7 +52,7 @@ Consumer Android app: Test code lies here with the app
      git@github.com:Shuttl-Tech/ConsumerAndroid.git
      
 
-######2. Get to the correct branches
+###### 2. Get to the correct branches
 
 For Test Orchestrator: get to ca_config branch to test ConsumerAndroid app
     
@@ -62,7 +62,7 @@ For Consumer app get onto the branch you want to test
     
     git checkout <branch_to_be_tested>
     
-######3. Setup paths 
+###### 3. Setup paths 
 
 With is you are all set to run tests on your local machine using the Test Orchestrator.
 
