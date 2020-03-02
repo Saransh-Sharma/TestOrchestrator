@@ -272,8 +272,14 @@ class InstrumentationRunnerCommandAssembler:
     single_test_command_schema = "{} {} {} {} {} {} {}{} {}"
 
     def assemble_run_test_package_cmd(self, adb_binary, device_adb_name, params, instrumentation_runner):
+        # TODO: return command to just run the passed pkg
+
         parameters = self._assemble_params(params)
-        return self.test_command_schema.format(adb_binary,
+
+        from system.console import Printer
+        Printer.step("assemble_run_test_package_cmd")
+        Printer.step("*** *** Test Command is  *** *** ")
+        output=self.test_command_schema.format(adb_binary,
                                                AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
                                                AdbShellCommand.SHELL,
                                                AdbActivityManagerCommand.ACTIVITY_MANAGER,
@@ -283,9 +289,36 @@ class InstrumentationRunnerCommandAssembler:
                                                InstrumentationRunnerCommand.INSTRUMENTATION_RUNNER.format(
                                                    instrumentation_runner)
                                                )
+        Printer.step(output)
+        Printer.step("*** *** *** *** *** *** ")
+
+        myCMD="adb shell CLASSPATH=$(adb shell pm path androidx.test.services)" \
+              " app_process / androidx.test.services.shellexecutor.ShellMain am " \
+              "instrument -r -w -e " \
+              "targetInstrumentation app.goplus.in.myapplication.debug.test/androidx.test.runner.AndroidJUnitRunner " \
+              "-e clearPackageData true androidx.test.orchestrator/androidx.test.orchestrator.AndroidTestOrchestrator"
+
+        return myCMD
+
+        # return self.test_command_schema.format(adb_binary,
+        #                                        AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
+        #                                        AdbShellCommand.SHELL,
+        #                                        AdbActivityManagerCommand.ACTIVITY_MANAGER,
+        #                                        InstrumentationRunnerCommand.INSTRUMENT_PROCESS,
+        #                                        InstrumentationRunnerCommand.DISPLAY_RAW_MESSAGE,
+        #                                        parameters,
+        #                                        InstrumentationRunnerCommand.INSTRUMENTATION_RUNNER.format(
+        #                                            instrumentation_runner)
+        #                                        )
 
     def assemble_run_single_test_cmd(self, adb_binary, device_adb_name, test_class, test_name, instrumentation_runner):
-        return self.single_test_command_schema.format(adb_binary,
+        # TODO: build my  command using all the args that are passed
+        # TODO: return command to just run the passed test
+
+        from system.console import Printer
+        Printer.step("*** *** assemble_run_single_test_cmd  *** *** ")
+        Printer.step("*** *** Test Command is  *** *** ")
+        output = self.single_test_command_schema.format(adb_binary,
                                                       AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
                                                       AdbShellCommand.SHELL,
                                                       AdbActivityManagerCommand.ACTIVITY_MANAGER,
@@ -296,6 +329,28 @@ class InstrumentationRunnerCommandAssembler:
                                                       InstrumentationRunnerCommand.INSTRUMENTATION_RUNNER.format(
                                                           instrumentation_runner)
                                                       )
+        Printer.step(output)
+        Printer.step("*** *** *** *** *** *** ")
+
+        myCMD = "adb shell CLASSPATH=$(adb shell pm path androidx.test.services)" \
+                " app_process / androidx.test.services.shellexecutor.ShellMain am " \
+                "instrument -r -w -e " \
+                "targetInstrumentation app.goplus.in.myapplication.debug.test/androidx.test.runner.AndroidJUnitRunner " \
+                "-e clearPackageData true androidx.test.orchestrator/androidx.test.orchestrator.AndroidTestOrchestrator"
+
+        return myCMD
+
+        # return self.single_test_command_schema.format(adb_binary,
+        #                                               AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
+        #                                               AdbShellCommand.SHELL,
+        #                                               AdbActivityManagerCommand.ACTIVITY_MANAGER,
+        #                                               InstrumentationRunnerCommand.INSTRUMENT_PROCESS,
+        #                                               InstrumentationRunnerCommand.DISPLAY_RAW_MESSAGE,
+        #                                               InstrumentationRunnerCommand.CLASS.format(test_class),
+        #                                               InstrumentationRunnerCommand.TEST_CASE.format(test_name),
+        #                                               InstrumentationRunnerCommand.INSTRUMENTATION_RUNNER.format(
+        #                                                   instrumentation_runner)
+        #                                               )
 
     @staticmethod
     def _assemble_params(params):
