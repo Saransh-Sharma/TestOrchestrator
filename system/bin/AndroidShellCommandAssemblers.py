@@ -292,6 +292,8 @@ class InstrumentationRunnerCommandAssembler:
         Printer.step(output)
         Printer.step("*** *** *** THIS IS RUN PACKAGE !*** *** *** ")
 
+        Printer.step("Device is: " + AdbCommand.SPECIFIC_DEVICE.format(device_adb_name))
+
         # TOClass=InstrumentationRunnerCommand.CLASS.format(test_class)
         # TOTest=InstrumentationRunnerCommand.TEST_CASE.format(test_name)
         # Printer.step("*** *** *** *** *** *** ")
@@ -308,13 +310,15 @@ class InstrumentationRunnerCommandAssembler:
 
         Printer.step("### ### ### END RUN PACKAGE END !### ### ### ")
 
-        myCMD2 = "adb shell CLASSPATH=$(adb shell pm path androidx.test.services)" \
+        myCMD2 = "adb " + AdbCommand.SPECIFIC_DEVICE.format(device_adb_name) + "" \
+                 " shell CLASSPATH=$(adb shell pm path androidx.test.services)" \
                  " app_process / androidx.test.services.shellexecutor.ShellMain" \
                  " am instrument -r -w -e targetInstrumentation " \
                  "app.goplus.in.myapplication.debug.test/androidx.test.runner.AndroidJUnitRunner" \
-                 " -e debug false -e package 'app.goplus.in.myapplication.uitests.endtoend.onboarding'" \
-                 " -e clearPackageData true " \
-                 "androidx.test.orchestrator/androidx.test.orchestrator.AndroidTestOrchestrator"
+                 " -e debug false " \
+                 "" + parameters + "" \
+                                   " -e clearPackageData true " \
+                                   "androidx.test.orchestrator/androidx.test.orchestrator.AndroidTestOrchestrator"
 
         return myCMD2
 
@@ -349,7 +353,15 @@ class InstrumentationRunnerCommandAssembler:
                                                         )
         TOClass = InstrumentationRunnerCommand.CLASS.format(test_class)
         TOTest = InstrumentationRunnerCommand.TEST_CASE.format(test_name)
+        Device = AdbCommand.SPECIFIC_DEVICE.format(device_adb_name)
 
+        Printer.step("Device is: " + Device)
+        Printer.step("Class is: " + InstrumentationRunnerCommand.CLASS.format(test_class))
+        Printer.step("Test is: " + InstrumentationRunnerCommand.TEST_CASE.format(test_name))
+
+        Printer.step("### ### ### THIS IS RUN SINGLE TEST !### ### ### ")
+        Printer.step("### ### ### THIS IS RUN SINGLE TEST !### ### ### ")
+        Printer.step("### ### ### THIS IS RUN SINGLE TEST !### ### ### ")
         Printer.step("### ### ### THIS IS RUN SINGLE TEST !### ### ### ")
 
         Printer.step("*** *** *** *** *** *** ")
@@ -367,7 +379,8 @@ class InstrumentationRunnerCommandAssembler:
 
         Printer.step("*** *** *** END IS RUN SINGLE TEST END !*** *** *** ")
 
-        myNewCMD = "adb shell am instrument -w -r -e " \
+        myNewCMD = "adb " + AdbCommand.SPECIFIC_DEVICE.format(device_adb_name) + "" \
+                   " shell am instrument -w -r -e " \
                    "debug false -e " \
                    "class app.goplus.in.myapplication.uitests.endtoend.onboarding.SignUpFlow  " \
                    "app.goplus.in.myapplication.debug.test/androidx.test.runner.AndroidJUnitRunner"
@@ -377,6 +390,12 @@ class InstrumentationRunnerCommandAssembler:
                 "instrument -r -w -e " \
                 "targetInstrumentation app.goplus.in.myapplication.debug.test/androidx.test.runner.AndroidJUnitRunner " \
                 "-e clearPackageData true androidx.test.orchestrator/androidx.test.orchestrator.AndroidTestOrchestrator"
+
+        Printer.step("### ### ### END THIS IS RUN SINGLE TEST END !### ### ### ")
+        Printer.step("### ### ### END THIS IS RUN SINGLE TEST END !### ### ### ")
+        Printer.step("### ### ### END THIS IS RUN SINGLE TEST END !### ### ### ")
+        Printer.step("### ### ### END THIS IS RUN SINGLE TEST END !### ### ### ")
+        Printer.step("### ### ### END THIS IS RUN SINGLE TEST END !### ### ### ")
 
         return myNewCMD
 
