@@ -47,6 +47,17 @@ class AdbLogCatCommand:
     DUMP = "-d"
 
 
+class AndroidXInstrumentationRunnerCommand:
+    INSTRUMENT_PROCESS = "instrument -w"
+    NUM_SHARD = "-e numShards {}"
+    SHARD_INDEX = "-e shardIndex {}"
+    PACKAGE = "-e package {}"
+    DISPLAY_RAW_MESSAGE = "-r"
+    INSTRUMENTATION_RUNNER = "{}"
+    CLASS = "-e class {}"
+    TEST_CASE = "#{}"
+
+
 class InstrumentationRunnerCommand:
     INSTRUMENT_PROCESS = "instrument -w"
     NUM_SHARD = "-e numShards {}"
@@ -56,6 +67,7 @@ class InstrumentationRunnerCommand:
     INSTRUMENTATION_RUNNER = "{}"
     CLASS = "-e class {}"
     TEST_CASE = "#{}"
+
 
 class AvdManagerCommand:
     class CreateAvdCommandPart:

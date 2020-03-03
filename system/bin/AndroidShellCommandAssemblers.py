@@ -279,26 +279,44 @@ class InstrumentationRunnerCommandAssembler:
         from system.console import Printer
         Printer.step("assemble_run_test_package_cmd")
         Printer.step("*** *** Test Command is  *** *** ")
-        output=self.test_command_schema.format(adb_binary,
-                                               AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
-                                               AdbShellCommand.SHELL,
-                                               AdbActivityManagerCommand.ACTIVITY_MANAGER,
-                                               InstrumentationRunnerCommand.INSTRUMENT_PROCESS,
-                                               InstrumentationRunnerCommand.DISPLAY_RAW_MESSAGE,
-                                               parameters,
-                                               InstrumentationRunnerCommand.INSTRUMENTATION_RUNNER.format(
-                                                   instrumentation_runner)
-                                               )
+        output = self.test_command_schema.format(adb_binary,
+                                                 AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
+                                                 AdbShellCommand.SHELL,
+                                                 AdbActivityManagerCommand.ACTIVITY_MANAGER,
+                                                 InstrumentationRunnerCommand.INSTRUMENT_PROCESS,
+                                                 InstrumentationRunnerCommand.DISPLAY_RAW_MESSAGE,
+                                                 parameters,
+                                                 InstrumentationRunnerCommand.INSTRUMENTATION_RUNNER.format(
+                                                     instrumentation_runner)
+                                                 )
         Printer.step(output)
-        Printer.step("*** *** *** *** *** *** ")
+        Printer.step("*** *** *** THIS IS RUN PACKAGE !*** *** *** ")
 
-        myCMD="adb shell CLASSPATH=$(adb shell pm path androidx.test.services)" \
-              " app_process / androidx.test.services.shellexecutor.ShellMain am " \
-              "instrument -r -w -e " \
-              "targetInstrumentation app.goplus.in.myapplication.debug.test/androidx.test.runner.AndroidJUnitRunner " \
-              "-e clearPackageData true androidx.test.orchestrator/androidx.test.orchestrator.AndroidTestOrchestrator"
+        # TOClass=InstrumentationRunnerCommand.CLASS.format(test_class)
+        # TOTest=InstrumentationRunnerCommand.TEST_CASE.format(test_name)
+        # Printer.step("*** *** *** *** *** *** ")
+        # Printer.step("** MY_CLASS: class app.goplus.in.myapplication.uitests.endtoend.onboarding.SignUpFlow")
+        # Printer.step("** TO_CLASS: " + TOClass)
+        #
+        # Printer.step("----------------------------------------")
+        # Printer.step("** MY_TEST: #sign_up_new_user")
+        # Printer.step("** TO_TEST: " + TOTest)
+        # Printer.step("*** *** *** *** *** *** ")
+        Printer.step("The params are: " + parameters)
 
-        return myCMD
+        # ** ** The params are:  -e package app.goplus.in.myapplication.uitests.endtoend.onboarding.signup ** **
+
+        Printer.step("### ### ### END RUN PACKAGE END !### ### ### ")
+
+        myCMD2 = "adb shell CLASSPATH=$(adb shell pm path androidx.test.services)" \
+                 " app_process / androidx.test.services.shellexecutor.ShellMain" \
+                 " am instrument -r -w -e targetInstrumentation " \
+                 "app.goplus.in.myapplication.debug.test/androidx.test.runner.AndroidJUnitRunner" \
+                 " -e debug false -e package 'app.goplus.in.myapplication.uitests.endtoend.onboarding'" \
+                 " -e clearPackageData true " \
+                 "androidx.test.orchestrator/androidx.test.orchestrator.AndroidTestOrchestrator"
+
+        return myCMD2
 
         # return self.test_command_schema.format(adb_binary,
         #                                        AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
@@ -319,18 +337,40 @@ class InstrumentationRunnerCommandAssembler:
         Printer.step("*** *** assemble_run_single_test_cmd  *** *** ")
         Printer.step("*** *** Test Command is  *** *** ")
         output = self.single_test_command_schema.format(adb_binary,
-                                                      AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
-                                                      AdbShellCommand.SHELL,
-                                                      AdbActivityManagerCommand.ACTIVITY_MANAGER,
-                                                      InstrumentationRunnerCommand.INSTRUMENT_PROCESS,
-                                                      InstrumentationRunnerCommand.DISPLAY_RAW_MESSAGE,
-                                                      InstrumentationRunnerCommand.CLASS.format(test_class),
-                                                      InstrumentationRunnerCommand.TEST_CASE.format(test_name),
-                                                      InstrumentationRunnerCommand.INSTRUMENTATION_RUNNER.format(
-                                                          instrumentation_runner)
-                                                      )
-        Printer.step(output)
+                                                        AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
+                                                        AdbShellCommand.SHELL,
+                                                        AdbActivityManagerCommand.ACTIVITY_MANAGER,
+                                                        InstrumentationRunnerCommand.INSTRUMENT_PROCESS,
+                                                        InstrumentationRunnerCommand.DISPLAY_RAW_MESSAGE,
+                                                        InstrumentationRunnerCommand.CLASS.format(test_class),
+                                                        InstrumentationRunnerCommand.TEST_CASE.format(test_name),
+                                                        InstrumentationRunnerCommand.INSTRUMENTATION_RUNNER.format(
+                                                            instrumentation_runner)
+                                                        )
+        TOClass = InstrumentationRunnerCommand.CLASS.format(test_class)
+        TOTest = InstrumentationRunnerCommand.TEST_CASE.format(test_name)
+
+        Printer.step("### ### ### THIS IS RUN SINGLE TEST !### ### ### ")
+
         Printer.step("*** *** *** *** *** *** ")
+        Printer.step("** MY_CLASS: class app.goplus.in.myapplication.uitests.endtoend.onboarding.SignUpFlow")
+        Printer.step("** TO_CLASS: " + TOClass)
+
+        Printer.step("----------------------------------------")
+        Printer.step("** MY_TEST: #sign_up_new_user")
+        Printer.step("** TO_TEST: " + TOTest)
+        Printer.step("*** *** *** *** *** *** ")
+
+        Printer.step(output)
+
+        Printer.step("*** *** *** *** *** *** ")
+
+        Printer.step("*** *** *** END IS RUN SINGLE TEST END !*** *** *** ")
+
+        myNewCMD = "adb shell am instrument -w -r -e " \
+                   "debug false -e " \
+                   "class app.goplus.in.myapplication.uitests.endtoend.onboarding.SignUpFlow  " \
+                   "app.goplus.in.myapplication.debug.test/androidx.test.runner.AndroidJUnitRunner"
 
         myCMD = "adb shell CLASSPATH=$(adb shell pm path androidx.test.services)" \
                 " app_process / androidx.test.services.shellexecutor.ShellMain am " \
@@ -338,7 +378,7 @@ class InstrumentationRunnerCommandAssembler:
                 "targetInstrumentation app.goplus.in.myapplication.debug.test/androidx.test.runner.AndroidJUnitRunner " \
                 "-e clearPackageData true androidx.test.orchestrator/androidx.test.orchestrator.AndroidTestOrchestrator"
 
-        return myCMD
+        return myNewCMD
 
         # return self.single_test_command_schema.format(adb_binary,
         #                                               AdbCommand.SPECIFIC_DEVICE.format(device_adb_name),
